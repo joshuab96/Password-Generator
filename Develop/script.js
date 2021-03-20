@@ -1,29 +1,39 @@
-// Assignment Code
+// Assignment Code                                                                      //Password Generator
+
+function generatePassword() {
+  
+  var length = window.prompt("How long do you want the password to be?");
+ 
+  while (length < 8 || length > 128)
+
+   length = window.prompt("Password has to be between 8 and 128 characters long, please enter a new length"); //getting password length from the user
+
+    Passlength = parseInt(length);
+
+    console.log(length);
+
+   var upperCase = window.confirm("Do you want uppercase characters?"); //confirming Upercase characters from user
+  
+  if (upperCase = true);
+
+  console.log(upperCase);
+}
+
+  
+  var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
+  var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
 var generateBtn = document.querySelector("#generate");
 
-
 // Write password to the #password input
-function UserPassword() {
-  window.prompt("How many characters long would you like you password to be? must be between 8 and 128, please input number") 
-    
-    if (UserPassword < 8 && UserPassword > 128 )
-    
-    window.prompt("Must only be between 8 and 128 characters long, please try again.");
-    
-    else if (UserPassword > 8 && UserPassword < 128 )
-    
-    window.prompt("joidjewijdio ");
-
-  };
-
-  // var password = generatePassword();
+function writePassword() {
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-
+}
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", UserPassword); {
-  
-}
+generateBtn.addEventListener("click", writePassword);
