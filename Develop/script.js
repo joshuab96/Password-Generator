@@ -1,4 +1,10 @@
-// Assignment Code                                                                      //Password Generator
+// Assignment Code                                                                    //Password Generator
+
+
+
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 
 function generatePassword() {
   
@@ -8,9 +14,7 @@ function generatePassword() {
 
    length = window.prompt("Password has to be between 8 and 128 characters long, please enter a new length"); //getting password length from the user
 
-    Passlength = parseInt(length);
-
-    console.log(length);
+    length = parseInt(length);
 
    var upperCase = window.confirm("Do you want uppercase characters?"); //confirming Upercase characters from user
   
@@ -20,8 +24,7 @@ function generatePassword() {
 }
 
   
-  var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
-  var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  
 
 
 var generateBtn = document.querySelector("#generate");
