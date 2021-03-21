@@ -21,12 +21,14 @@ if (!passwordLength) {
   return;
 }
 
-//Determines whether length input number is between 8 and 128
+//Determines whether password length input number is between 8 and 128
 if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128) {
   console.log(passwordLength); 
 
 //will alert user if password length chosen is not between 8 and 128  
-}else window.confirm("Error, please choose a password length between 8 and 128 and try again")
+}else { window.confirm("Error, please choose a password length between 8 and 128 and try again");
+
+
 }
 
 
