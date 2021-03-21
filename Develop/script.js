@@ -4,7 +4,7 @@
 
 var lowerCaseCHharacters = "abcdefghijklmnopqrstuvwxyz";
 
-var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 var specialCharacters = "!@#$%^&*()";
 
@@ -33,14 +33,27 @@ return;
 //Request if user would like uppercase characters in password
 var passwordUpperCase = window.confirm ("Would you like your password to contain uppercase characters?");
 
-//If user request no uppercase 
-if  (!passwordUpperCase) {
+//If user does not request uppercase 
+if (!passwordUpperCase) {
 console.log(passwordUpperCase);
 
-var passwordSpecial = window.confirm("Would you like your password to contain special characters");
-
+//If user request uppercase
+}else {
+  console.log(passwordUpperCase);
 }
 
+//Request if user would like special characters
+var passwordSpecial = window.confirm ("Would you like your password to contain special characters?");
+
+//If user requested no special characters
+if (!passwordSpecial) {
+console.log(passwordSpecial);
+
+//If user did request for special characters
+}else {
+console.log(passwordSpecial);
+}
+}
 
 
 
