@@ -2,7 +2,7 @@
 
 
 
-var lowerCaseCHharacters = "abcdefghijklmnopqrstuvwxyz";
+var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 
 var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -42,6 +42,18 @@ console.log(passwordUpperCase);
   console.log(passwordUpperCase);
 }
 
+//Requests if user would like numbers
+var passwordNumber= window.confirm("Would you like your password to contain numbers") 
+
+//If user requests no numbers
+if (!passwordNumber) {
+  console.log(passwordNumber);
+
+//if user requests numbers
+}else {
+  console.log(passwordNumber)
+}
+
 //Request if user would like special characters
 var passwordSpecial = window.confirm ("Would you like your password to contain special characters?");
 
@@ -52,7 +64,9 @@ console.log(passwordSpecial);
 //If user did request for special characters
 }else {
 console.log(passwordSpecial);
+
 }
+
 }
 
 
