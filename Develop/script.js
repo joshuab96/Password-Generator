@@ -4,14 +4,21 @@
 
 var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 
-var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-var specialCharacters = "!@#$%^&*()";
+var numberCharacters ="1212312441657876693243787643625412774192837812964738179"
+
+var specialCharacters = "!@#$%^&*($%^&*$%^@#$%^!@#$%^)%^@#$&(&*($%&)%^^&";
 
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+function generatePassword() {
+
+  var passwordChars = '';
+  var password = '';
+  var passwordLength = '';
+  var Random = '';
 
 //Requests password length input via window prompt.
 var passwordLength = window.prompt("To generate password, please enter password length between 8 and 128"); 
@@ -21,7 +28,7 @@ if (!passwordLength) {
   return;
 }
 
-//Determines whether password length input number is between 8 and 128
+//Determines whether password length input number is between 8 and 128 and parses it from a string into number primitive type
 if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128) {
   console.log(passwordLength); 
 
@@ -33,56 +40,76 @@ return;
 //Request if user would like uppercase characters in password
 var passwordUpperCase = window.confirm ("Would you like your password to contain uppercase characters?");
 
-//If user does not request uppercase 
-if (!passwordUpperCase) {
-console.log(passwordUpperCase);
+//If yes to UPPERCASE 
+if (passwordUpperCase) {
+  passwordChars = passwordChars.concat(upperCaseCharacters, lowerCaseCharacters)
+  console.log(passwordChars);
 
-//If user request uppercase
+// if no to UPPERCASE
 }else {
-  console.log(passwordUpperCase);
+  passwordChars = passwordChars.concat(lowerCaseCharacters)
+  console.log(passwordChars);
 }
 
-//Requests if user would like numbers
+//Requests if user would like NUMBERS
 var passwordNumber= window.confirm("Would you like your password to contain numbers") 
 
-//If user requests no numbers
-if (!passwordNumber) {
-  console.log(passwordNumber);
+//If yes to NUMBERS
+if (passwordNumber) {
+  passwordChars = passwordChars.concat(numberCharacters)
+  console.log(passwordChars);
 
-//if user requests numbers
+//if no to NUMBERS
 }else {
-  console.log(passwordNumber)
+  console.log(passwordChars);
 }
 
-//Request if user would like special characters
+//Request if user would like SPECIAL CHARACTERS
 var passwordSpecial = window.confirm ("Would you like your password to contain special characters?");
 
-//If user requested no special characters
-if (!passwordSpecial) {
-console.log(passwordSpecial);
+//If yes to SPECIAL CHARACTERS 
+if (passwordSpecial) {
+  passwordChars = passwordChars.concat(specialCharacters)
+console.log(passwordChars);
 
-//If user did request for special characters
+
+//If no to SPECIAL CHARACTERS
 }else {
-console.log(passwordSpecial);
+console.log(passwordChars);
 
 }
 
+console.log (passwordChars);
+
+for (i = 0; i<passwordLength; i++) {
+ var Random = Math.floor(Math.random() * passwordChars.length)
+ password = password.concat(passwordChars[Random]);
 }
 
+console.log(password);
 
 
 
+// loop through 0 to password lenght
+// generate a random number using Math.floor(Math.random() * passwordChars.length)
+// use random number to pick a character from passwordChars
+// concat the random character onto password
 
-// var password = generatePassword();
-var passwordText = document.querySelector("#password");
+return password;
 
-passwordText.value = password;
+}
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
+  passwordText.value = password;
+
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 
 
 
